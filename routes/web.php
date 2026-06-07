@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\StudentFormController;
+use App\Http\Controllers\UserProfileController;
 
 //basic routing
 // Route::get('/', function(){
@@ -212,3 +213,9 @@ Route::post('submit-form', [FormController::class, 'store'])->name('submit-form'
 
 Route::view('/student-form', 'student-form')->name('student-form');
 Route::post('/student-form-submit', [StudentFormController::class, 'submitForm'])->name('student-form-submit');
+
+//sessions
+Route::view('/login', 'login')->name('login');
+Route::post('/log', [UserProfileController::class, 'login']);
+Route::view('/profile', 'profile');
+Route::get('/logout', [UserProfileController::class, 'logout']);
