@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClientController;
-
+use App\Http\Controllers\FormController;
+use App\Http\Controllers\StudentFormController;
 
 //basic routing
 // Route::get('/', function(){
@@ -202,3 +203,12 @@ Route::get('checkCountry/{count}', [CountryController::class, 'country']);
 //named routing
 Route::view('/home', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
+
+//forms 
+Route::view('/form', 'form');
+Route::post('submit-form', [FormController::class, 'store'])->name('submit-form');
+
+//form from ppt
+
+Route::view('/student-form', 'student-form')->name('student-form');
+Route::post('/student-form-submit', [StudentFormController::class, 'submitForm'])->name('student-form-submit');
