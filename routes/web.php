@@ -200,6 +200,5 @@ Route::get('checkCountry/{count}', [CountryController::class, 'country']);
 //advanced routing
 
 //named routing
-
 Route::view('/home', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
